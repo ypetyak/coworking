@@ -1,0 +1,1047 @@
+
+/* ============ MAIN STYLE ============    ============== */
+
+*,
+html {
+    margin: 0;
+    box-sizing: border-box;
+    /* background: lightgrey; */
+}
+
+html,
+main,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* ===================    LANDING PAGE =================== */
+
+.headerForLandingPage {
+    height: 80px;
+    width: 100%;
+    background: #39CCCC;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logoInHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Wire One', sans-serif;
+    margin-left: 30px;
+    color: white;
+    font-size: 30px;
+}
+
+.lineInHeader {
+    margin-left: 10px;
+    width: 3px;
+    height: 60px;
+    background: rgb(35,49,63);
+}
+
+.loginLogoutinHeader {
+    margin-left: 700px;
+}
+
+.loginButton {
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgb(35,49,63);
+    background: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.loginButton:hover {
+    background: rgb(35,49,63);
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+.landingPageIntro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 700px;
+    background-image: url("stockphoto1.jpg");
+    background-size: cover;
+    color: white;
+    flex-direction: column;
+}
+
+.introTitile {
+    font-size: 70px;
+    margin-bottom: 30px;
+}
+
+.introText {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.introButton {
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: rgb(57,204,204, 0.3);
+    color: rgb(253,250,244);
+    font-weight: bold;
+    font-size: 25px;
+    outline: none;
+    border: solid 2px rgb(35,49,63);
+
+}
+
+.introButton:hover {
+    background: linear-gradient( rgba(57, 204, 204, 0.9), rgb(57, 204, 204));
+    cursor: pointer;
+}
+
+.landingPageInfoFirst {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 800px;
+    background: rgb(253,250,244)
+
+}
+
+.landingPageInfoFirstText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+    color: rgb(253,250,244);
+    width: 500px;
+    height: 600px;
+    font-size: 25px;
+
+    padding: 50px;
+    background: #39CCCC;
+
+}
+
+.textLine {
+    margin-bottom: 30px;
+}
+
+/* .breakingLine {
+    background: rgb(35,49,63);
+    width: 100%;
+    height: 15px;
+} */
+
+.header-second-page {
+	background: rgb(253,250,244);
+	text-align: center;
+	font-size: 40px;
+}
+
+
+.imageInLandingPageInfoFirst {
+    width: 500px;
+    height: 600px;
+
+}
+
+.landingPageInfoSecond {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 800px;
+    background: rgb(253,250,244)
+
+}
+
+.happyCustomer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 500px;
+    border-radius: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 40px;
+    background: rgb(57, 204, 204);
+
+}
+
+.happyCustomerName {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: rgb(35,49,63);
+}
+
+.happyCustomerReview {
+    font-size: 20px;
+    color: rgb(253,250,244);
+}
+
+.imageInLandingPageInfoSecond {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.landingPageAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100%;
+    height: 600px;
+
+    background-size: cover;
+    /* filter: brightness(50%); */
+    background-image: url("./stockphoto3.jpg")
+}
+
+.aboutUsHeader {
+    margin-top: 100px;
+    font-size: 30px;
+    color: rgb(35,49,63);
+    margin-bottom: 30px;
+}
+
+.aboutUsText {
+    padding: 20px;
+    width: 700px;
+    font-size: 25px;
+    color: rgb(35,49,63);
+    font-weight: bold;
+    background: rgb(57, 204, 204, 0.6);
+
+    border-radius: 50px;
+}
+
+.landingPageFooter {
+    width: 100%;
+    height: 150px;
+    background: rgb(57, 204, 204);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.social-icons {
+	color: rgb(35,49,63);
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.go-top-button {
+	width: 150px;
+    height: 50px;
+    border: 2px solid rgb(35,49,63);
+    background: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+	margin-right: 300px
+
+}
+
+.go-top-button:hover {
+	background: rgb(35,49,63);
+    cursor: pointer;
+    outline: none;
+}
+
+.socialnetworkImage {
+    width: 50px;
+    height: 50px;
+}
+
+/* ============= Login and Register =================== */
+
+
+
+.registerOrLogin {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 800px;
+    background: rgb(253,250,244);
+
+}
+
+.LoginText {
+    color: rgb(35,49,63);
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+.mainPageButtonInLogin {
+    width: 300px;
+    height: 50px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(57, 204, 204);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 20px;
+    text-align: center;
+    margin-left: 225px;
+}
+
+.mainPageButtonInLogin:hover {
+
+    background: rgb(35,49,63);
+    cursor: pointer;
+    outline: none;
+}
+
+.inputFieldsinLoginOrRegister {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputInLoginOrRegister {
+    margin: 10px;
+    width: 300px;
+    height: 50px;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    font-size: 20px;
+    text-align: center;
+}
+
+.inputInLoginOrRegister:hover {
+    background: rgb(57, 204, 204, 0.6);
+}
+
+.buttonInLoginOrRegister {
+    width: 300px;
+    height: 50px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 20px;
+    text-align: center;
+}
+
+.buttonInLoginOrRegister:hover {
+     background: rgb(57, 204, 204, 0.6);
+     cursor: pointer;
+     outline: none;
+ }
+
+.youStillCanRegister {
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(35,49,63);
+
+}
+
+.registerText {
+    color: rgb(35,49,63);
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+/* ============ APP AND STYLING FOR IT ============== */
+
+.mainBoxInApp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.menuInAppBox {
+    width: 300px;
+    height: 100%;
+}
+
+.contentBoxInApp {
+    width: 100%;
+    height: 100%;
+    background: rgb(253,250,244);
+}
+
+.routesInApp {
+    width: 100%;
+    height: 100%;
+}
+
+/* ============ MENU ================ */
+
+.menuInApp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgb(35,49,63);
+}
+
+.logoInApp {
+    width: 100%;
+    height: 200px;
+    background: rgb(57, 204, 204);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fakeLogoInApp {
+    color: rgb(253,250,244);
+    font-family: 'Wire One', sans-serif;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.functionalityTabInApp {
+    width: 100%;
+    height: 400px;
+    flex-direction: column;
+}
+
+.appMenuButton {
+    width: 100%;
+    height: 60px;
+    background: 0;
+    border: none;
+    color: grey;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+}
+
+.appMenuButton:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    outline: none;
+}
+
+.profileLinkinApp {
+    /* border-top: grey solid 1px; */
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 100px;
+}
+
+/* ======== ======= HOUSE PROFILE =========== =========== */
+
+.houseProfileBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.houseProfile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+
+
+}
+
+.photoOfTheRoom {
+    width: 400px;
+    height: 400px;
+}
+
+.houseProfileInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+
+
+}
+
+.inputFieldsForHouse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+
+    padding: 20px;
+}
+
+.houseProfileInfoFields {
+    width: 400px;
+    height: 400px;
+
+    padding: 20px;
+}
+
+.houseName {
+    width: 100%;
+    height: 40px;
+    color: rgb(35,49,63);
+    border-bottom: 2px solid rgb(35,49,63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+.houseDescription {
+    width: 100%;
+    height: 150px;
+    overflow: scroll;
+    color: rgb(35,49,63);
+    border-bottom: 2px solid rgb(35,49,63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
+.numberOfPeopleInHouse {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(35,49,63);
+    border-bottom: 2px solid rgb(35,49,63);
+    margin-bottom: 10px;
+
+}
+
+.houseAddress {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(35,49,63);
+    border-bottom: 2px solid rgb(35,49,63);
+    margin-bottom: 10px;
+
+}
+
+.postcode {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(35,49,63);
+    border-bottom: 2px solid rgb(35,49,63);
+    margin-bottom: 10px;
+}
+
+.updateHouseName {
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.updateHouseName:hover {
+    background: rgb(57, 204, 204, 0.6);
+}
+
+.updateDesc {
+    width: 100%;
+    height: 200px;
+    overflow: scroll;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 5px;
+    resize: none;
+}
+
+.updateDesc:hover {
+    background: rgb(57, 204, 204, 0.6);
+}
+
+.updateSpaceAvailable {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    margin: 5px;
+}
+
+.updateSpaceAvailable:hover {
+    background: rgb(57, 204, 204, 0.6);
+}
+
+.updateAddress {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    margin: 5px;
+}
+
+.updateAddress:hover {
+    background: rgb(57, 204, 204, 0.6);
+}
+
+.updatePostcode {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    margin: 5px;
+}
+
+.updatePostcode:hover {
+    background: rgb(57, 204, 204, 0.6);
+}
+
+.buttonsInHouseProfile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+}
+
+.editHouseProfle {
+    width: 150px;
+    height: 40px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+}
+
+.editHouseProfle:hover {
+    background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+
+}
+
+
+.updateHouseProfile {
+    width: 150px;
+    height: 40px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+}
+
+.updateHouseProfile:hover {
+    background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+}
+
+
+.buttonForCoworkingEvent {
+    width: 260px;
+    height: 60px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+}
+
+.buttonForCoworkingEvent:hover {
+    background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+}
+
+/* =========== Date Popup ============= */
+
+.datePopupInHouse {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(228,119,94, 0.4);
+}
+
+.textInChooseDate {
+    color: rgb(35,49,63);
+    border-bottom: 2px solid rgb(35,49,63);
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.dataInput {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(35,49,63);
+    border: 2px solid rgb(35,49,63);
+}
+
+
+
+.chooseDateWindow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    background: rgb(253,250,244);
+}
+
+.buttonsInChoosingDate {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* =========== YOUR EVENT LISTS ============== */
+
+.selectTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.yourEventsBox {
+    margin-top: 20px;
+    width: 600px;
+    height: 150px;
+    border: solid 2px rgb(35,49,63);
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.yourEvents {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 5px;
+    width: 100px;
+    height: 130px;
+    border: solid 2px rgb(35,49,63);
+    /* background: rgb(35,49,63); */
+}
+
+.yourEvents:hover {
+    /* background: rgb(228,119,94, 0.6); */
+}
+
+.eventDateInEventBox {
+    color: rgb(35,49,63);
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.goToEventButton {
+    width: 80px;
+    height: 30px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+
+.goToEventButton:hover {
+    background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+}
+
+.deleteEventButton {
+    width: 80px;
+    height: 30px;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(253,250,244);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    outline: none;
+}
+
+.deleteEventButton:hover {
+    background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+}
+
+.title-event-manager {
+	color: rgb(35,49,63);
+	margin-top: 20px;
+}
+
+/* ==================== USER PROFILE ================= */
+
+.userProfileBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+#myInput{
+    position: fixed;
+    transform: translateX(10000px);
+}
+
+/* ========== =========== CHOOSE EVENT PAGE / MAP  ======== */
+
+.eventBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* padding: 50px; */
+}
+
+.mapBoxInFindEvent {
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.mapBox {
+    width: 500px;
+    height: 400px;
+}
+
+.theMap {
+    width: 500px;
+    height: 400px;
+}
+
+.chooseDateBoxInFindEvent {
+    margin-top: 40px;
+    margin-left: 275px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.textInChooseDateInFindEvent {
+    color: rgb(35,49,63);
+    font-size: 40px;
+    border-bottom: 2px solid rgb(35,49,63);
+    margin-right: 50px;
+}
+
+.dataInputInFindEvent {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(35,49,63);
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+}
+
+.realMapBox {
+    width: 800px;
+    height: 500px;
+}
+
+.findPlacesAtSelectedDay {
+    margin-left: 10px;
+    width: 120px;
+    height: 50px;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    color: rgb(253,250,244);
+    font-size: 20px;
+    text-align: center;
+}
+
+.findPlacesAtSelectedDay:hover {
+    background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+}
+
+.map-popup-house {
+	display: flex;
+	flex-direction: column;
+}
+
+.imageInPopup {
+    width: 200px;
+    height: 200px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.button-in-popup {
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(35,49,63);
+    color: rgb(253,250,244);
+    font-size: 20px;
+    text-align: center;
+}
+
+.button-in-popup:hover {
+	background: rgb(57, 204, 204, 0.6);
+    cursor: pointer;
+}
+
+/* =================== =======
+
+
+
+.inputInLoginOrRegister {
+    margin: 10px;
+    width: 300px;
+    height: 50px;
+    outline: none;
+    border: 2px solid rgb(35,49,63);
+    background: rgb(253,250,244);
+    color: rgb(35,49,63);
+    font-size: 20px;
+    text-align: center;
+}
+
+.inputInLoginOrRegister:hover {
+    background: rgb(228,119,94, 0.6);
+}
+
+.loginButton {
+    width: 100px;
+    height: 40px;
+    border: 2px solid rgb(35,49,63);
+    background: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.loginButton:hover {
+    background: rgb(35,49,63);
+    cursor: pointer;
+    outline: none;
+}

@@ -1,0 +1,18 @@
+
+DROP TABLE IF EXISTS events;
+DROP TABLE IF EXISTS houses;
+DROP TABLE IF EXISTS users;
+
+
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY,
+    first VARCHAR(200) NOT NULL,
+    last VARCHAR(200) NOT NULL,
+    photo_url VARCHAR(300),
+    bio VARCHAR(500),
+    profession VARCHAR(300),
+    email VARCHAR(200) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
+);
+
+SELECT * FROM users;
