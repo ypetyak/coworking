@@ -1,5 +1,12 @@
 const spicedPg = require("spiced-pg");
-const secrets = require("../secrets.json");
+
+let secrets;
+
+if (process.env.NODE_ENV == "production") {
+    secrets = process.env; // in prod the secrets are environment variables
+} else {
+    secrets = require("../secrets"); // secrets.json is in .gitignore
+}
 
 const dbUrl = secrets.dbUrl;
 
@@ -34,9 +41,9 @@ exports.getUserInfo = (userId) => {
     SELECT id, first, last, email, bio, profession, photo_url
     FROM users
     WHERE id = ($1);
-    `
-    return db.query(q, [userId])
-}
+    `;
+    return db.query(q, [userId]);
+};
 
 // =========== Update User Profile =========== //
 
@@ -46,9 +53,9 @@ exports.updateUserProfile = (userId, first, last, bio, profession) => {
     SET first = $2, last = $3, bio = $4, profession = $5
     WHERE id = $1
     RETURNING id, first, last, email, bio, profession, photo_url
-    `
+    `;
     return db.query(q, [userId, first, last, bio, profession])
-}
+};
 
 // ========== Get House Profile ========== //
 
@@ -57,9 +64,9 @@ exports.getHouseProfile = (userId) => {
     SELECT id, house_name, description, space, address, postcode, photo
     FROM houses
     WHERE userId = ($1);
-    `
-    return db.query(q, [userId])
-}
+    `;
+    return db.query(q, [userId]);
+};
 
 // ======== INSERT HOUSE INFO ============ //
 
@@ -70,9 +77,9 @@ exports.updateHouseProfile = (userId, house_name, description, space, address, p
     ON CONFLICT (userId)
     DO UPDATE SET house_name = $2, description = $3, space = $4, address = $5, postcode = $6
     RETURNING id, house_name, description, space, address, postcode, photo
-    `
+    `;
     return db.query(q, [userId, house_name, description, space, address, postcode])
-}
+};
 
 
 // ============= CREATE EVENT ============== ============= //
@@ -82,9 +89,9 @@ exports.createEvent = (userId, houseId, eventDate) => {
     INSERT INTO events (userId, houseId, eventDate)
     VALUES ($1, $2, $3)
     RETURNING id, eventDate, houseId
-    `
-    return db.query(q, [userId, houseId, eventDate])
-}
+    `;
+    return db.query(q, [userId, houseId, eventDate]);
+};
 
 // ================ GET EVENTS CREATED =========== //
 
@@ -93,9 +100,9 @@ exports.getEventsCreated = (userId) => {
     SELECT *
     FROM events
     WHERE userId = ($1);
-    `
-    return db.query(q, [userId])
-}
+    `;
+    return db.query(q, [userId]);
+};
 
 // =============== DELETE EVENT =============== //
 
@@ -103,9 +110,9 @@ exports.deleteEvent = (eventId) => {
     const q = `
     DELETE FROM events
     WHERE (id = $1);
-    `
-    return db.query(q, [eventId])
-}
+    `;
+    return db.query(q, [eventId]);
+};
 
 // ============= GET EVENTS BY DATE ============== //
 
@@ -118,8 +125,8 @@ exports.getEventsByDate = (date) => {
     WHERE (eventDate = $1)
     `;
 
-    return db.query(q, [date])
-}
+    return db.query(q, [date]);
+};
 
 // ========================
 
@@ -131,8 +138,8 @@ exports.getAllEvents = () => {
     ON events.houseId = houses.id
     `;
 
-    return db.query(q)
-}
+    return db.query(q);
+};
 
 //====== UPLOAD IMAGE ==============
 
