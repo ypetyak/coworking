@@ -5,7 +5,7 @@ import Geocode from "react-geocode";
 
 import { getPlacesByDate, updatedWithLocation } from "./actions.js";
 
-import EventMapContainer from "./EventMapContainer"
+import EventMapContainer from "./eventMapContainer";
 // import { Link } from "react-router-dom";
 
 class FindEvent extends React.Component {
