@@ -166,7 +166,7 @@ app.get("/getUserInfo", (req, res) => {
 
     db.getUserInfo(userId).then(results => {
         // console.log("User Info: ", results.rows);
-        res.json(results.rows[0])
+        res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in GET User Info in /getUserInfo", error);
     });
@@ -188,11 +188,11 @@ app.post("/updateUserProfile", (req, res) => {
 
     db.updateUserProfile(userId, first, last, bio, profession).then(results => {
         console.log("USER Profile: ", results.rows);
-        res.json(results.rows[0])
+        res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in POST Update USER Profile in /updateUserProfile", error);
     });
-})
+});
 
 // ========= REQUEST FROM ACTION.JS FOR HOUSE PROFILE =========== //
 
@@ -202,11 +202,11 @@ app.get("/getHouseProfile", (req, res) => {
 
     db.getHouseProfile(userId).then(results => {
         // console.log("House Profile: ", results.rows);
-        res.json(results.rows[0])
+        res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in GET House Profile in /getHouseProfile", error);
     });
-})
+});
 
 //  =========== UPDATE/CREATE HOUSE PROFILE ============== //
 
@@ -225,11 +225,11 @@ app.post("/updateHouseProfile", (req, res) => {
 
     db.updateHouseProfile(userId, house_name, description, space, address, postcode).then(results => {
         console.log("House Profile: ", results.rows);
-        res.json(results.rows[0])
+        res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in POST Update House Profile in /updateHouseProfile", error);
     });
-})
+});
 
 //  =========== CREATE AN EVENT DATE ============== //
 
@@ -245,14 +245,14 @@ app.post("/createEvent", (req, res) => {
     db.createEvent(userId, houseId, eventDate).then(results => {
         db.getEventsCreated(userId).then(results => {
             // console.log("House Profile: ", results.rows);
-            res.json(results.rows)
+            res.json(results.rows);
         }).catch(error => {
             console.log("Error in GET EVENTS CREATED in /eventsCreated", error);
         });
     }).catch(error => {
         console.log("Error in POST Create Event in /createEvent", error);
     });
-})
+});
 
 // ========= GET ALL EVENTS WE CREATED ============ //
 
@@ -262,11 +262,11 @@ app.get("/eventsCreated", (req, res) => {
 
     db.getEventsCreated(userId).then(results => {
         // console.log("House Profile: ", results.rows);
-        res.json(results.rows)
+        res.json(results.rows);
     }).catch(error => {
         console.log("Error in GET EVENTS CREATED in /eventsCreated", error);
     });
-})
+});
 
 // ========== DELETE EVENT =============== //
 
@@ -287,16 +287,16 @@ app.post("/deleteEvent", (req, res) => {
 
 app.get("/getPlacesByDate", (req, res) => {
 
-    var date = req.query.date
+    var date = req.query.date;
     console.log("Our Date: ", date);
 
     db.getEventsByDate(date).then(results => {
         console.log("Events We Choose By Date: ", results.rows);
-        res.json(results.rows)
+        res.json(results.rows);
     }).catch(error => {
         console.log("Error in GET EVENTS CREATED in /eventsCreated", error);
     });
-})
+});
 
 // ========= UPLOAD FOR USER PROFILE  ======================
 
@@ -334,15 +334,15 @@ app.post("/uploadForHousePhoto", uploader.single("file"), s3.upload, (req, res) 
 
 app.get("/getAllEvents", (req, res) => {
 
-    console.log("Our Date: ", date);
+    // console.log("Our Date: ", date);
 
     db.getAllEvents().then(results => {
 
-        res.json(results.rows)
+        res.json(results.rows);
     }).catch(error => {
         console.log("Error in GET All Events in /getAllEvents", error);
     });
-})
+});
 
 // ===== Logout
 
