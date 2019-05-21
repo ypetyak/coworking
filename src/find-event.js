@@ -40,7 +40,6 @@ class FindEvent extends React.Component {
     }
 
     findPlaces() {
-        console.log("Find Find Find", this.state.dayToCowork);
         var date = this.state.dayToCowork;
         this.props.dispatch(getPlacesByDate(date));
 
