@@ -14,7 +14,6 @@ export default class Login extends React.Component {
 
     // Function to send input
     submit() {
-        // console.log("These: ", this.password, this.email);
         axios
             .post("/login", {
                 email: this.email,
@@ -69,7 +68,7 @@ export default class Login extends React.Component {
                         className="inputInLoginOrRegister"
                         placeholder="Password"
                     />
-                <button onClick={this.submit} className="buttonInLoginOrRegister">
+                    <button onClick={this.submit} className="buttonInLoginOrRegister">
                         Login
                     </button>
 

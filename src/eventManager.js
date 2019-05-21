@@ -26,17 +26,17 @@ class EventManager extends React.Component {
     deleteOurEvent(e) {
         console.log("What is E: ", e);
 
-		var data = {
-			eventId: e
-		}
+        var data = {
+            eventId: e
+        };
 
-       this.props.dispatch(deleteEvent(data))
+        this.props.dispatch(deleteEvent(data));
     }
 
 
     render() {
         if (!this.props.events) {
-            console.log("Loading...")
+            console.log("Loading...");
             return (
 
                 <div> Loading... </div> // you can replace it with some funny or useful image/text
@@ -45,18 +45,18 @@ class EventManager extends React.Component {
 
         return (
             <div className="houseProfileBox">
-				<h1 className="title-event-manager"> You are hosting next events: </h1>
+                <h1 className="title-event-manager"> You are hosting next events: </h1>
                 <div className="yourEventsBox">
-		        	{this.props.events.map(event => (
+                    {this.props.events.map(event => (
                         <div key={event.id} className="yourEvents">
                             <Link to="/events/{event.id}" className="goToEventButton"> Go to Event Page </Link>
                             <p className="eventDateInEventBox">{event.eventdate}</p>
-                            <p className="deleteEventButton" onClick={() => {this.deleteOurEvent(event.id)}}> Delete Event </p>
+                            <p className="deleteEventButton" onClick={() => { this.deleteOurEvent(event.id) }}> Delete Event </p>
                         </div>
                     ))}
                 </div>
-				<h1 className="title-event-manager"> You come to next events: </h1>
-				<div className="yourEventsBox">
+                <h1 className="title-event-manager"> You come to next events: </h1>
+                <div className="yourEventsBox">
 
                 </div>
             </div>
@@ -64,7 +64,7 @@ class EventManager extends React.Component {
     }
 }
 
-const mapStateToProps = function(state) {
+const mapStateToProps = function (state) {
     return {
         events: state.events
     };

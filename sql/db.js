@@ -54,7 +54,7 @@ exports.updateUserProfile = (userId, first, last, bio, profession) => {
     WHERE id = $1
     RETURNING id, first, last, email, bio, profession, photo_url
     `;
-    return db.query(q, [userId, first, last, bio, profession])
+    return db.query(q, [userId, first, last, bio, profession]);
 };
 
 // ========== Get House Profile ========== //
@@ -78,7 +78,7 @@ exports.updateHouseProfile = (userId, house_name, description, space, address, p
     DO UPDATE SET house_name = $2, description = $3, space = $4, address = $5, postcode = $6
     RETURNING id, house_name, description, space, address, postcode, photo
     `;
-    return db.query(q, [userId, house_name, description, space, address, postcode])
+    return db.query(q, [userId, house_name, description, space, address, postcode]);
 };
 
 

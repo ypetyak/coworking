@@ -15,14 +15,7 @@ const client = knox.createClient({
     bucket: "imagesforimageboard"
 });
 
-console.log("Secret: ", secrets);
 exports.upload = function(req, res, next) {
-    // if (!req.file) {
-    //     console.log("No req.file");
-    //     return res.status(500).json({
-    //         success: false
-    //     });
-    // }
 
     const s3Request = client.put(req.file.filename, {
         /// this is write stream
@@ -47,10 +40,5 @@ exports.upload = function(req, res, next) {
             });
         }
 
-        // const wasSuccessful = s3Response.statusCode == 200;
-        //
-        // res.json({
-        //     success: wasSuccessful
-        // });
     });
 };

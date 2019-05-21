@@ -1,6 +1,4 @@
 import React from "react";
-
-import {HashRouter, Route} from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default class LandingPage extends React.Component {
@@ -37,7 +35,7 @@ export default class LandingPage extends React.Component {
                     </div>
                 </div>
                 <div className="breakingLine"></div>
-				<h2 class="header-second-page"> Be happy to work together! </h2>
+                <h2 className="header-second-page"> Be happy to work together! </h2>
                 <div className="landingPageInfoSecond">
                     <div className="happyCustomer">
                         <img className="imageInLandingPageInfoSecond" src="./happyCustomer1.jpg" alt="Happy Customer 1"></img>
@@ -61,12 +59,12 @@ export default class LandingPage extends React.Component {
 
                 </div>
                 <div className="landingPageFooter">
-					<a href="#start"><button className="go-top-button">Top <i class="fas fa-arrow-up"></i></button></a>
+                    <a href="#start"><button className="go-top-button">Top <i className="fas fa-arrow-up"></i></button></a>
                     <div className="socialNetworksIcons">
-                        <i class="fab fa-facebook-square fa-4x social-icons"></i>
-						<i class="fab fa-instagram fa-4x social-icons"></i>
-						<i class="fab fa-twitter-square fa-4x social-icons"></i>
-						<i class="fab fa-pinterest-square fa-4x social-icons"></i>
+                        <i className="fab fa-facebook-square fa-4x social-icons"></i>
+                        <i className="fab fa-instagram fa-4x social-icons"></i>
+                        <i className="fab fa-twitter-square fa-4x social-icons"></i>
+                        <i className="fab fa-pinterest-square fa-4x social-icons"></i>
                     </div>
                 </div>
             </div>

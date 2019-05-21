@@ -7,18 +7,18 @@ import { connect } from "react-redux";
 import { userInfo } from "./actions.js";
 // ========= ======== IMPORT COMPONENTS ========== ========= //
 
-import Menu from "./menu"
-import HomeProfile from "./home-profile"
-import Profile from "./profile"
-import FindEvent from "./find-event"
-import EventManager from "./EventManager"
+import Menu from "./menu";
+import HomeProfile from "./home-profile";
+import Profile from "./profile";
+import FindEvent from "./find-event";
+import EventManager from "./eventManager";
 // ========= ======== ========
 
 class App extends React.Component {
 
 
     componentDidMount() {
-        this.props.dispatch(userInfo())
+        this.props.dispatch(userInfo());
 
     }
 
@@ -48,7 +48,7 @@ class App extends React.Component {
                                     path="/event"
                                     component={FindEvent}
                                 />
-								<Route
+                                <Route
                                     exact
                                     path="/eventManager"
                                     component={EventManager}
@@ -63,36 +63,11 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = function(state) {
+const mapStateToProps = function (state) {
     console.log("state in user in Menu:", state);
     return {
         user: state.user
     };
 };
 
-// return {
-//     friends: state.friends.filter(user => user.status == 2),
-//     wannabes: state.friends.filter(user => user.status == 1)
-// };
-
 export default connect(mapStateToProps)(App);
-
-
-// <div className="menuInAppBox">
-//     <div className="menuInApp">
-//         <div className="logoInApp">
-//             <h1 className="fakeLogoInApp"> CH </h1>
-//         </div>
-//         <div className="functionalityTabInApp">
-//             <a href="/map"><button className="appMenuButton"> Find a place </button></a>
-//             <a href="/home"><button className="appMenuButton"> Your Home </button></a>
-//             <a href="/events"><button className="appMenuButton"> Events </button></a>
-//
-//         </div>
-//         <div className="profileLinkinApp">
-//             <a href="/profile"><button className="appMenuButton"> Profile </button></a>
-//             <img src="" className="profileImageInAppMenu"></img>
-//         </div>
-//     </div>
-// </div>
-//

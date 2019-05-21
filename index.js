@@ -88,11 +88,6 @@ var uploader = multer({
 
 // ========= CHECK IF WE ARE LOGGED IN OR NOT ========== ===========
 
-// if (!req.session) {
-//     res.redirect("/welcome")
-// }
-
-
 app.get("/welcome", function(req, res) {
     if (req.session.userId) {
         return res.redirect("/");
@@ -109,24 +104,15 @@ app.post("/registration", (req, res) => {
     // and extract values we need
 
     let {first, last, email, password} = req.body;
-    // console.log("Input from registration.js", first, last, email, password);
-
     // hash our password with special boilerplate method
 
     hashPassword(password).then(hash => {
-        console.log(hash);
-
         // put info and hashed password into the DB
-
         db.createUser(first, last, email, hash).then(results => {
-
             // if everything is alright infrom the front end side, so they can proceed further
-
             req.session.userId = results.rows[0].id; // also don't forget to start a new session
             res.json({success: true});
         }).catch(error => {
-
-            // or inform them that there is an error
             console.log("Error in POST Registration: ", error);
             res.json({success: false});
         });
@@ -134,13 +120,10 @@ app.post("/registration", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-    // console.log("req.body: ", req.body);
 
     let {email, password} = req.body;
-    console.log("OUR EMAIL", email, password);
 
     db.returnPassword(email).then(results => {
-        console.log("Resutls from password request: ", results);
         var savedPas = results.rows[0].password;
         var id = results.rows[0].id;
 
@@ -152,7 +135,6 @@ app.post("/login", (req, res) => {
         });
     }).catch(error => {
         console.log("Error in POST /login: ", error);
-
         res.json({success: false});
     });
 });
@@ -163,31 +145,24 @@ app.get("/getUserInfo", (req, res) => {
 
     var userId = req.session.userId;
 
-
     db.getUserInfo(userId).then(results => {
-        // console.log("User Info: ", results.rows);
         res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in GET User Info in /getUserInfo", error);
     });
-})
+});
 
 // ================= UPDATE USER PROFILE ================== //
 
 app.post("/updateUserProfile", (req, res) => {
     var userId = req.session.userId;
-
     // info about user
-
     var first = req.body.first;
     var last = req.body.last;
     var bio = req.body.bio;
     var profession = req.body.profession;
 
-    console.log("Info for our new profile: ", req.body.bio);
-
     db.updateUserProfile(userId, first, last, bio, profession).then(results => {
-        console.log("USER Profile: ", results.rows);
         res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in POST Update USER Profile in /updateUserProfile", error);
@@ -212,19 +187,14 @@ app.get("/getHouseProfile", (req, res) => {
 
 app.post("/updateHouseProfile", (req, res) => {
     var userId = req.session.userId;
-
     // info about house
-
     var house_name = req.body.house_name;
     var description = req.body.description;
     var space = req.body.space;
     var address = req.body.address;
     var postcode = req.body.postcode;
 
-    console.log("Info for our new profile: ", req.body);
-
     db.updateHouseProfile(userId, house_name, description, space, address, postcode).then(results => {
-        console.log("House Profile: ", results.rows);
         res.json(results.rows[0]);
     }).catch(error => {
         console.log("Error in POST Update House Profile in /updateHouseProfile", error);
@@ -235,16 +205,12 @@ app.post("/updateHouseProfile", (req, res) => {
 
 app.post("/createEvent", (req, res) => {
 
-
     var userId = req.session.userId;
     var houseId = req.body.houseId;
     var eventDate = req.body.eventDate;
 
-    console.log("Info for our Event: ", req.body);
-
     db.createEvent(userId, houseId, eventDate).then(results => {
         db.getEventsCreated(userId).then(results => {
-            // console.log("House Profile: ", results.rows);
             res.json(results.rows);
         }).catch(error => {
             console.log("Error in GET EVENTS CREATED in /eventsCreated", error);
@@ -261,7 +227,6 @@ app.get("/eventsCreated", (req, res) => {
     var userId = req.session.userId;
 
     db.getEventsCreated(userId).then(results => {
-        // console.log("House Profile: ", results.rows);
         res.json(results.rows);
     }).catch(error => {
         console.log("Error in GET EVENTS CREATED in /eventsCreated", error);
@@ -273,8 +238,6 @@ app.get("/eventsCreated", (req, res) => {
 app.post("/deleteEvent", (req, res) => {
 
     var eventId = req.body.eventId;
-
-    console.log("Delete Our Event: ", eventId);
 
     db.deleteEvent(eventId).then(() => {
         console.log("Event Deleted");
@@ -288,10 +251,8 @@ app.post("/deleteEvent", (req, res) => {
 app.get("/getPlacesByDate", (req, res) => {
 
     var date = req.query.date;
-    console.log("Our Date: ", date);
 
     db.getEventsByDate(date).then(results => {
-        console.log("Events We Choose By Date: ", results.rows);
         res.json(results.rows);
     }).catch(error => {
         console.log("Error in GET EVENTS CREATED in /eventsCreated", error);
@@ -302,10 +263,8 @@ app.get("/getPlacesByDate", (req, res) => {
 
 
 app.post("/uploadForProfile", uploader.single("file"), s3.upload, (req, res) => {
-    console.log("ID is here: ", req.session.userId);
+
     db.updateProfileImage(config.s3Url + req.file.filename, req.session.userId).then(results => {
-        // req.session.avatar_url = config.s3Url + req.file.filename;
-        console.log("Our Amazning rsults: ", results);
         res.json(results.rows[0]);
     }).catch(err => {
         console.log("Error in writeFileTo: ", err);
@@ -317,10 +276,8 @@ app.post("/uploadForProfile", uploader.single("file"), s3.upload, (req, res) => 
 // ============= UPLAOD FOR HOUSE PROFILE =================
 
 app.post("/uploadForHousePhoto", uploader.single("file"), s3.upload, (req, res) => {
-    console.log("ID is here: ", req.session.userId);
+
     db.updateHouseImage(config.s3Url + req.file.filename, req.session.userId).then(results => {
-        // req.session.avatar_url = config.s3Url + req.file.filename;
-        console.log("Our Amazning rsults: ", results);
         res.json(results.rows[0]);
     }).catch(err => {
         console.log("Error in writeFileTo: ", err);
@@ -328,32 +285,23 @@ app.post("/uploadForHousePhoto", uploader.single("file"), s3.upload, (req, res) 
     });
 });
 
-//
-
-
+// ======== GET ALL EVENTS ========
 
 app.get("/getAllEvents", (req, res) => {
 
-    // console.log("Our Date: ", date);
-
     db.getAllEvents().then(results => {
-
         res.json(results.rows);
     }).catch(error => {
         console.log("Error in GET All Events in /getAllEvents", error);
     });
 });
 
-// ===== Logout
+// ======== LOGOUT ========
 
 app.post("/logout", (req, res) => {
     req.session = null;
-    // req.session.destroy;
     res.redirect("/welcome");
 });
-
-
-
 
 // =========
 

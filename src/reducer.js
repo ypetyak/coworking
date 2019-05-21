@@ -1,5 +1,4 @@
 export default function (state = {}, action) {
-    console.log("Our Actions are here: ", action);
 
     // ========== ======= GET USER INFO ======== ==========
 
@@ -106,13 +105,10 @@ export default function (state = {}, action) {
     // ======================= PHOTO IN PROFILE ==================
 
     if (action.type == "PROFILE_PHOTO") {
-        console.log("State in PROFILE PHOTO", state);
-
         state = {
             ...state,
             user:  state.user.photo_url = action.profilePhoto
-        }
-
+        };
     }
 
     // ==================== PHOTO OF THE HOUSE ===============
@@ -122,13 +118,12 @@ export default function (state = {}, action) {
         state = {
             ...state,
             house:  state.house.photo = action.housePhoto
-        }
+        };
 
     }
 
     // =========== ======= ======= =========== ======= =======
 
-    console.log("Our state", state);
     return state;
 
 }

@@ -3,11 +3,8 @@ import ReactDOM from 'react-dom';
 
 // ========== ======== PAGES WE IMPORT ============ ===========
 
-// import LandingPage from "./landing-page";
-// import Login from "./login";
-// import Register from "./register"
-import App from "./app"
-import Welcome from "./welcome"
+import App from "./app";
+import Welcome from "./welcome";
 
 
 /// ==== === === Additional import for REDUX ======== ========
@@ -32,13 +29,13 @@ if (location.pathname == "/welcome") {
         <Provider store={store}>
             <Welcome />
         </Provider>
-    )
+    );
 } else {
     elem = (
         <Provider store={store}>
             <App />
         </Provider>
-    )
+    );
 }
 
 

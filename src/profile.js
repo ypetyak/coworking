@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { userInfo, updateUserProfile, photoUploadForprofile } from "./actions.js";
-// import { Link } from "react-router-dom";
 
 class Profile extends React.Component {
 
@@ -10,27 +9,22 @@ class Profile extends React.Component {
         super(props);
         this.state = {
             showEditProf: false,
-
         };
 
         this.setUserProfile = this.setUserProfile.bind(this);
         this.toggleDesc = this.toggleDesc.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.uploadPhoto = this.uploadPhoto.bind(this)
-
-
+        this.uploadPhoto = this.uploadPhoto.bind(this);
     }
 
 
 
     componentDidMount() {
-        console.log("And...Action!");
         this.props.dispatch(userInfo());
     }
 
     setUserProfile() {
-        console.log("Master of the world", this.state);
-        this.props.dispatch(updateUserProfile(this.state))
+        this.props.dispatch(updateUserProfile(this.state));
 
         this.setState({
             showEditProf: !this.state.showEditProf,
@@ -40,7 +34,6 @@ class Profile extends React.Component {
 
     uploadPhoto(e) {
         let file;
-        console.log("Our targete", e.target.files[0]);
         e.preventDefault();
         file = e.target.files[0];
 
@@ -48,13 +41,11 @@ class Profile extends React.Component {
 
         fd.append("file", file);
 
-        this.props.dispatch(photoUploadForprofile(fd))
-        }
+        this.props.dispatch(photoUploadForprofile(fd));
+    }
 
 
     toggleDesc() {
-        console.log("toggle stuff");
-
         this.setState({
             showEditProf: !this.state.showDesc,
             first: this.props.user.first,
@@ -62,30 +53,24 @@ class Profile extends React.Component {
             bio: this.props.user.bio,
             profession: this.props.user.profession
         });
-
-        console.log("toggle stuff", this.state);
     }
 
     handleChange(e) {
-        console.log("Type! Type! Type!");
         this.setState({
             [e.target.name]: e.target.value
-        })
+        });
     }
 
 
     render() {
-        console.log("We are in our component for USER: ", this.props.user);
         if (!this.props.user) {
-            console.log("Loading...")
             return (
-
-                <div> Loading... </div> // you can replace it with some funny or useful image/text
+                <div> Loading... </div>
             );
         }
 
         if (!this.props.user.photo_url) {
-            this.props.user.photo_url = "./profile1.jpg"
+            this.props.user.photo_url = "./profile1.jpg";
         }
 
 
@@ -130,12 +115,12 @@ class Profile extends React.Component {
 
                             <div className="buttonsInHouseProfile">
                                 <p className="editHouseProfle" onClick={this.toggleDesc}> Edit Your Profile </p>
-                                    <input
-                                        id="myInput"
-                                        type="file"
-                                        accept="image/*"
-                                        onChange={this.uploadPhoto}
-                                    />
+                                <input
+                                    id="myInput"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={this.uploadPhoto}
+                                />
                                 <label className="editHouseProfle" onClick={this.uploadPhoto} htmlFor="myInput"> Upload Your Photo </label>
                             </div>
                         </div>
@@ -148,7 +133,6 @@ class Profile extends React.Component {
 }
 
 const mapStateToProps = function(state) {
-    console.log("state in USER in Menu:", state);
     return {
         user: state.user
     };
