@@ -19,7 +19,7 @@ class EventManager extends React.Component {
 
 
     componentDidMount() {
-        this.props.dispatch(eventsCreated())
+        this.props.dispatch(eventsCreated());
 
     }
 
@@ -36,10 +36,8 @@ class EventManager extends React.Component {
 
     render() {
         if (!this.props.events) {
-            console.log("Loading...");
             return (
-
-                <div> Loading... </div> // you can replace it with some funny or useful image/text
+                <div> Loading... </div>
             );
         }
 
@@ -51,7 +49,7 @@ class EventManager extends React.Component {
                         <div key={event.id} className="yourEvents">
                             <Link to="/events/{event.id}" className="goToEventButton"> Go to Event Page </Link>
                             <p className="eventDateInEventBox">{event.eventdate}</p>
-                            <p className="deleteEventButton" onClick={() => { this.deleteOurEvent(event.id) }}> Delete Event </p>
+                            <p className="deleteEventButton" onClick={() => { this.deleteOurEvent(event.id); }}> Delete Event </p>
                         </div>
                     ))}
                 </div>

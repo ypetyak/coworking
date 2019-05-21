@@ -1,6 +1,13 @@
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from 'google-maps-react';
-
 import React from 'react';
+
+let secrets;
+
+if (process.env.NODE_ENV == "production") {
+    secrets = process.env; // in prod the secrets are environment variables
+} else {
+    secrets = require("./secrets"); // secrets.json is in .gitignore
+}
 
 export class Container extends React.Component {
 
@@ -116,5 +123,6 @@ export class Container extends React.Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyBAnvGRe6yO7UmZB30kpfpc6CpagjNgzUE'
+    apiKey: secrets.MAPS_KEY
 })(Container);
+
